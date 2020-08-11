@@ -13,7 +13,7 @@ if (taskB2 === 20) {
 }
 
 //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
-Number("1999");
+let stringToNum = Number("1999");
 
 //Task d: Write a function to multiply a*b
 function add(num1, num2) {
@@ -60,15 +60,17 @@ function dogFeed(lb, age) {
     }
   } else {
     if (age <= 0.4) {
+      //.33
       return lb * 0.1;
     } else if (age <= 0.7) {
+      //.583
       return lb * 0.05;
     } else {
       return lb * 0.04;
     }
   }
 }
-// console.log(dogFeed(15, 1));
+console.log(dogFeed(15, 1));
 
 /************************************************************** Task 4 **************************************************************/
 // Rock, Paper, Sissors
@@ -123,7 +125,7 @@ function playGame(choice) {
   }
 }
 
-// playGame("rock");
+playGame("rock");
 
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
@@ -157,7 +159,7 @@ function annoyingSong(start) {
   }
 }
 
-// annoyingSong(10);
+annoyingSong(10);
 
 /************************************************************** Task 7 **************************************************************/
 //Grade Calculator
@@ -185,10 +187,36 @@ function calcGrade(grade) {
 }
 
 console.log(calcGrade(92));
+
 /************************************************************** Stretch **************************************************************/
 //Create a function that counts the number of vowels within a string. It should handle both capitalized and uncapitalized vowels.
 // Hint - you may need to study tomorrow's traning kit on arrays
 // try looking up the .includes() method
+// a, e, i, o, u
+function countWord(word) {
+  const lowed = word.toLowerCase();
+  let count = 0;
+
+  for (let i = 0; i < lowed.length; i++) {
+    tempLetter = lowed.charAt(i);
+
+    if (tempLetter.includes("a")) {
+      count++;
+    } else if (tempLetter.includes("e")) {
+      count++;
+    } else if (tempLetter.includes("i")) {
+      count++;
+    } else if (tempLetter.includes("o")) {
+      count++;
+    } else if (tempLetter.includes("u")) {
+      count++;
+    }
+  }
+
+  return count;
+}
+
+console.log(countWord("It works!"));
 
 /************************************************************** Stretch **************************************************************/
 //Take Rock, Paper, Sissors further
